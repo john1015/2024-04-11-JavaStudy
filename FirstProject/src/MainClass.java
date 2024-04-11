@@ -1,3 +1,4 @@
+
 /*
  	 프로그램  : 컴퓨터에 명령을 수행하게 만든다.
  	 --------------------------------------
@@ -22,11 +23,20 @@
 	 1) 파일
 	 2) RDBMS => 오라클
  */
+import java.io.*;
+
 public class MainClass {
 
-	public static void main(String[] args) {
-
-		
+	public static void main(String[] args) throws Exception {
+		FileReader fr = new FileReader("c:\\javaDev\\movie.txt");
+		int i = 0;
+		StringBuffer data = new StringBuffer();
+		while ((i = fr.read()) != -1) // 파일끝일때 종료 => -1 EOF
+		{
+			data.append((char) i);
+		}
+		fr.close();
+		System.out.println(data);
 	}
 
 }
