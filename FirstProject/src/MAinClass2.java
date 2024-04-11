@@ -36,7 +36,7 @@
 public class MAinClass2 {
 
 	public static void main(String[] args) {
-		System.out.println("\"홍길동\""); // "홍길동"으로 출력하고 싶을때
+		System.out.println("\"홍길동\""); // "홍길동"으로 출력하고 싶을때 => 명령문 종료할때 반드시 ; 붙이기
 		System.out.println("c:\\javaDev\\movie.txt"); //경로명 같은경우는 이미 사용하기 때문에 2번쓰기
 	}
 
