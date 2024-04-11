@@ -64,6 +64,8 @@ public class MAinClass2 {
 		 *  for(int i=0; i<=5; i++) { for(int j=0; j<=5-i; j++) {
 		 * System.out.print("*"); } System.out.println(); }
 		 */
+		System.out.println("10 20 30 40 50");
+		System.out.printf("%-3d%-3d%-3d%-3d%-3d",10,20,30,40,50);
 	}
 
 }
