@@ -142,7 +142,7 @@
  *    	boolean b= true
  *      !b → false ==> 조건 → 로그인 , 검색어 ...
  *      
- *      =형변환 연간자 → 모든  데이터형은 변경이 가능(boolean 제외)
+ *      =형 변환 연산자 → 모든  데이터형은 변경이 가능(boolean 제외)
  *      int → double , double → char
  *      형식) 10.5 → double (int)10.5 ==> int 10
  *      
@@ -179,13 +179,48 @@
  *       char + int = int
  *       *** 데이터형의 크기
  *       byte < char < int < long < float < double
+ *       *** 주의점
  *       
+ *       byte + byte = int
+ *       char + char = int
+ *       byte + char = int
+ *       ------------------------ int  보다 작은 데이터형은 연산시에 결과값이 int
+ *       
+ *       int + double + char = double
+ *       10    10.5     'A'
+ *       10.0 + 10.5 → 20.5
+ *       	20.5 + 65.0 → 85.5 : 결과값은 가장 큰 데이터형이 나온다
+ *       → + - * → 동일
+ *       
+ *       /
+ *       → 0으로 나누면 오류 발생 10/0 → 오류 : 0으로 나눌수 없다
+ *       → 정수/정수 5/2 → 2  : 소수점 제외 → 소수점이 필요하면 정수를 실수로 나누기
+ *       
+ *       % → 나누고 나머지값
+ *        5%2 → 1 → 배수 구할때 많이 쓰임
+ *        ** 주의 점
+ *        	 5%2 =1
+ *        	 5%-1=1
+ *        	 -5%2=1
+ *        	 -5%-2=-1
+ *           **왼쪽 부호를 따라감
  */
 public class 연산자_1 {
 
 	public static void main(String[] args) {
+
+		//국어 영어 수학 → 총점 , 평균
+		int kor =80;
+		int eng =75;
+		int math =90;
 		
-		
+		int total =kor + eng + math;
+		double avg = total/3.0;
+		System.out.println("국어 점수 : " + kor);
+		System.out.println("영어 점수 : " + eng);
+		System.out.println("수학 점수 : " + math);
+		System.out.println("총점 : " + total);
+		System.out.printf("평균 : %.2f" , avg);// 자동 반올림
 	}
 
 }
