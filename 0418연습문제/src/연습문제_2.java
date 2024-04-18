@@ -6,9 +6,9 @@ public class 연습문제_2 {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("정수입력 : ");
 		int num1 = sc.nextInt();
-		System.out.println("+ - * / 입력 : ");
+		System.out.print("+ - * / 입력 : ");
 		char op = sc.next().charAt(0);
-		System.out.println("정수입력 : ");
+		System.out.print("정수입력 : ");
 		int num2 = sc.nextInt();
 		
 		switch(op) {
