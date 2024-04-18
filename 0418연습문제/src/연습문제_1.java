@@ -24,7 +24,7 @@ public class 연습문제_1 {
 
 	public static void main(String[] args) {
 		Scanner sc  = new Scanner(System.in);
-		System.out.println("정수 입력 : ");
+		System.out.print("정수 입력 : ");
 		int a = sc.nextInt();
 		int score = a/10;
 		char hak = 'A';
