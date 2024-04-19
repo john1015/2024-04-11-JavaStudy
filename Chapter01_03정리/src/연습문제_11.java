@@ -11,6 +11,7 @@ public class 연습문제_11 {
 			System.out.print(i+" : 정수를 입력하세요: ");
 			Scanner scan = new Scanner(System.in);
 			int j=scan.nextInt();
+			System.out.println("num = "+j);
 			if(j%2==0) jjak++;
 		}
 		System.out.println("짝수의 개수 : "+jjak);
