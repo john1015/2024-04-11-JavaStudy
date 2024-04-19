@@ -3,11 +3,16 @@
 public class 연습문제_8 {
 
 	public static void main(String[] args) {
-		int jjak=0;
+		int jjak=0,hol=0;
 		for (int i = 3; i <= 4462; i++) {
 			if(i%2==0) jjak += i; 
+			else hol+=i;
 		}
 		System.out.println("3~4462짝수의 합 : "+jjak);
+		System.out.println("3~4462홀수의 합 : "+hol);
 	}
+	
+	
 
+	
 }
