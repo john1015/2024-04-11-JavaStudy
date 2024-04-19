@@ -1,0 +1,19 @@
+//11. 10개의 정수를 입력받아 그 수들 중 짝수의 개수가 몇개인지 출력하는 프로그램 작성
+
+import java.util.Scanner;
+
+public class 연습문제_11 {
+
+	public static void main(String[] args) {
+		int jjak=0;
+		System.out.println("정수 10개를 입력하세요: ");
+		for (int i = 1; i <= 10; i++) {
+			Scanner scan = new Scanner(System.in);
+			int j=scan.nextInt();
+			if(j%2==0) jjak++;
+		}
+		System.out.println(jjak);
+		
+	}
+
+}
