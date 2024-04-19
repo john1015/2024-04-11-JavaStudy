@@ -7,13 +7,19 @@ public class 연습문제_6 {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		
-		System.out.println("start 정수 입력 : ");
+		System.out.print("start 정수 입력 : ");
 		int num1 = scan.nextInt();
-		System.out.println("end 정수 입력 : ");
+		System.out.print("end 정수 입력 : ");
 		int num2 = scan.nextInt();
-		for (int i = num1; i <= num2; i++) {
-			System.out.println(num1+"X"+i+" = "+i*num1);
+		if(num1<num2) {
+			for (int i = num1; i <= num2; i++) {
+				System.out.println(num1+"X"+i+" = "+i*num1);
+			}
 		}
+		else {
+			System.out.println("시작값이 끝값보다 큽니다!!");
+		}
+		
 	}
 
 }
