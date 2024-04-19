@@ -6,13 +6,14 @@ public class 연습문제_11 {
 
 	public static void main(String[] args) {
 		int jjak=0;
-		System.out.println("정수 10개를 입력하세요: ");
+		
 		for (int i = 1; i <= 10; i++) {
+			System.out.print(i+" : 정수를 입력하세요: ");
 			Scanner scan = new Scanner(System.in);
 			int j=scan.nextInt();
 			if(j%2==0) jjak++;
 		}
-		System.out.println(jjak);
+		System.out.println("짝수의 개수 : "+jjak);
 		
 	}
 

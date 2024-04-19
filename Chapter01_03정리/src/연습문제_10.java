@@ -7,7 +7,7 @@ public class 연습문제_10 {
 		for (int i = 1; i <= 100; i++) {
 			if(i%4==0)sum+=i;
 		}
-		System.out.println(sum);
+		System.out.println("0~100까지 4의 배수의 합 : "+sum);
 	}
 
 }

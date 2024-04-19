@@ -7,7 +7,7 @@ public class 연습문제_9 {
 		for (int i = 0; i <= 12; i++) {
 			if(i%2==0||i%3==0||i%6==0) sum+=i;
 		}
-		System.out.println(sum);
+		System.out.println("2,3의배수의합 : "+sum);
 	}
 
 }

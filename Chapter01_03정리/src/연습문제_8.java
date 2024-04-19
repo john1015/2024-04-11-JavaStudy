@@ -7,7 +7,7 @@ public class 연습문제_8 {
 		for (int i = 3; i <= 4462; i++) {
 			if(i%2==0) jjak += i; 
 		}
-		System.out.println(jjak);
+		System.out.println("3~4462짝수의 합 : "+jjak);
 	}
 
 }
