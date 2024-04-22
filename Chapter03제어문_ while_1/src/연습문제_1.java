@@ -11,6 +11,8 @@ public class 연습문제_1 {
 		int num = scan.nextInt();
 		if(num%11==0)
 			System.out.println("10의 자리와 1의 자리가 같습니다");
+		else
+			System.out.println("10의 자리와 1의 자리가 같지않습니다!!");
 	}
 
 }
