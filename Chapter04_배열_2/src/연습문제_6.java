@@ -4,13 +4,16 @@
 public class 연습문제_6 {
 
 	public static void main(String[] args) {
+		//생성과 동시에 초기화
 		int[] num = { 94, 85, 95, 88, 90 };
-		int max=0,min=100;
+		// 최소값 , 최대값 구하기 → 요청처리
+		int max=num[0],min=num[0];
 		for (int i = 0; i < num.length; i++) {
 			if(max<num[i]) max=num[i];
 			if(min>num[i]) min=num[i];
 		}
-		System.out.println("Max : "+max+ " min : "+min);
+		//출력
+		System.out.println("Max : "+max+ " Min : "+min);
 	}
 
 }

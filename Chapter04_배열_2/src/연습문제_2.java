@@ -6,7 +6,7 @@ public class 연습문제_2 {
 
 	public static void main(String[] args) {
 		char[] c = new char[10];
-		int[] i= {0,1,2,3,4};
+		int[] i= {0,1,2,3,4,5};
 		String[] s = {"일","월","화","수","목","금","토"};
 		boolean[] b= {true,false,false,true};
 		
