@@ -9,7 +9,7 @@ public class 연습문제_2 {
 	public static void main(String[] args) {
 		
 		int[] human= {50,45,35,12,70};
-		int total=0,max=0,min=100,maxn=0,minn=0;
+		int total=0,max=human[0],min=human[0],maxn=0,minn=0;
 		double avg=0;
 		for (int i = 0; i < human.length; i++) {
 			System.out.println((i+1)+"번 사원 실적 : "+human[i]);
