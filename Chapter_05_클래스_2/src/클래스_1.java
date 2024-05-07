@@ -227,6 +227,10 @@ public class 클래스_1 {
 		System.out.println("card1 = "+card1);
 		card1.number=3;
 		card1.type="♠";
+		System.out.println("number = "+card1.number);
+		System.out.println("type = "+card1.type);
+		System.out.println("width = "+card1.width);
+		System.out.println("height = "+card1.height);
 		
 		/*
 		 * static => 별도의 영역에 따로 1개만 저장이 된다 => card1,card2 모두 접근이 가능
@@ -245,7 +249,13 @@ public class 클래스_1 {
 		 * 												 --------
 		 */
 		Card card2=new Card();
+		card2.number=5;
+		card2.type="♣";
 		System.out.println("card2 = "+card2);
+		System.out.println("number = "+card2.number);
+		System.out.println("type = "+card2.type);
+		System.out.println("width = "+card2.width);
+		System.out.println("height = "+card2.height);
 		// Card@e73f9ac
 		/*
 		 * -----------card2--------------
@@ -262,7 +272,41 @@ public class 클래스_1 {
 		 * 
 		 * 												 --------
 		 */
-
+		 // static 변수 변경 => 같은 메모리 공간을 제어 => 모든 변경
+		card1.width=300;
+		card1.height=500;
+		card2.width=500;
+		card2.height=1000;
+		
+		Card.width=1200;
+		Card.height=1500;
+		
+		System.out.println("card1.width = "+card1.width);
+		System.out.println("card1.height = "+card1.height);
+		System.out.println("card2.width = "+card2.width);
+		System.out.println("card2.height = "+card2.height);
+		
+		card1.number=7;
+		card1.type="♥";
+		card2.number=8;
+		card2.type="◆";
+		
+		System.out.println("card1.number = "+card1.number);
+		System.out.println("card1.type = "+card1.type);
+		System.out.println("card2.number = "+card2.number);
+		System.out.println("card2.type = "+card2.type);
+		
+		/*
+		 * 프로그램에서 데이터 관리 => React / Vue => 데이터관리
+		 * -------------------
+		 * 변수 => 배열 => 클래스 연산자 / 제어문 => 변경(x)
+		 * => 파일 => 오라클
+		 * 
+		 * 공통저장 | 따로저장
+		 * static   변수선언  
+		 */
+		
+		
 	}
 
 }
