@@ -88,8 +88,11 @@ public class MainClass_5 {
 		System.out.println(bb.c);
 		bb.display();
 		try {
-			B kk =bb.clone();
-		}catch(CloneNotSupportedException e) {e.tr}
+			B kk=(B)bb.clone();
+		} catch (CloneNotSupportedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		System.out.println("=====================");
 		// 2번째로 많이사용
