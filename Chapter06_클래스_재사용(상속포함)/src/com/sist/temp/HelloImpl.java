@@ -1,10 +1,11 @@
 package com.sist.temp;
 
-public class HelloImpl {
+public class HelloImpl implements Hello{
 
 	@Override
-	public void sayHello2() {
+	public void sayHello() {
+		// TODO Auto-generated method stub
 		System.out.println("sayHello Call...");
 	}
-	
+
 }
