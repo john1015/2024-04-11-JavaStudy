@@ -9,12 +9,12 @@ public class ClientMain extends JFrame implements ActionListener{
 	public ControllPanel cp =new ControllPanel();
 	public ClientMain() {
 		setLayout(null);
-		mp.setBounds(150, 15, 600, 30);
+		mp.setBounds(150, 15, 800, 30);
 		add(mp);
-		cp.setBounds(0, 50, 800, 530);
+		cp.setBounds(0, 50, 1000, 530);
 		add(cp);
 		
-		setSize(800,600);
+		setSize(1024,625);
 		setVisible(true);
 		setResizable(false);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -24,6 +24,7 @@ public class ClientMain extends JFrame implements ActionListener{
 		mp.b2.addActionListener(this);
 		mp.b3.addActionListener(this);
 		mp.b4.addActionListener(this);
+		mp.b5.addActionListener(this);
 	}
 	public static void main(String[] args) {
 		
@@ -46,8 +47,10 @@ public class ClientMain extends JFrame implements ActionListener{
 		else if(mp.b3==e.getSource()) {
 			cp.card.show(cp, "COMMUNITY");
 		}
-		
 		else if(mp.b4==e.getSource()) {
+			cp.card.show(cp, "BOARD");
+		}
+		else if(mp.b5==e.getSource()) {
 			JOptionPane.showMessageDialog(this, "프로그램을 종료합니다");
 			System.exit(0);
 		}
