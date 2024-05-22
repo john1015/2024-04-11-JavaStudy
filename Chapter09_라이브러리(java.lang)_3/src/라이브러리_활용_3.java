@@ -72,6 +72,9 @@ public class 라이브러리_활용_3 extends JFrame implements ActionListener,M
 	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		try {
+			UIManager.setLookAndFeel("com.jtattoo.plaf.noire.NoireLookAndFeel"); 
+		}catch(Exception ex) {}
 		new 라이브러리_활용_3();
 	}
 
