@@ -132,7 +132,7 @@ public class SignUpPanel extends JPanel {
 		content_ta = new JTextArea();
 		content_la.setBounds(250 , 500 , 80 , 30);
 		add(content_la);
-		content_ta.setBounds(340,500 ,250,30);
+		content_ta.setBounds(340,500 ,400,150);
 		add(content_ta);
 		
 		//add1_tf = new JTextField();
