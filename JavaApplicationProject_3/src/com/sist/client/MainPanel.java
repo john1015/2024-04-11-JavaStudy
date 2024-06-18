@@ -5,7 +5,7 @@ import javax.swing.*;
 
 public class MainPanel extends JPanel{
 	CardLayout card = new CardLayout();
-	HomePanel hp = new HomePanel();
+	//HomePanel hp = new HomePanel();
 	ControllPanel cp = new ControllPanel();
 	//EmpListPanel ep = new EmpListPanel();
 	
