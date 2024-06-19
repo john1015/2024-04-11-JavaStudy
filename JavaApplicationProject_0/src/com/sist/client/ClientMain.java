@@ -27,7 +27,7 @@ public class ClientMain extends JFrame implements ActionListener,MouseListener,R
     PostFindFrame post=new PostFindFrame();// 우편번호 검색 
     IdCheckFrame idfrm=new IdCheckFrame();
     
-    ControllPanel cp=new ControllPanel();
+    ControlPanelEmp cp=new ControlPanelEmp();
     MenuPanel mp=new MenuPanel();
     // 네트워크에 필요한 객체
     Socket s; // 통신기기 => 핸드폰 
@@ -47,7 +47,7 @@ public class ClientMain extends JFrame implements ActionListener,MouseListener,R
     	
     	mp.setBounds(300, 15, 600, 35);
     	add(mp);
-    	cp.setBounds(10, 60, 930, 600);
+    	cp.setBounds(0, 60, 1280, 600);
     	add(cp);
     	
     	setSize(1280, 720);
@@ -78,6 +78,7 @@ public class ClientMain extends JFrame implements ActionListener,MouseListener,R
     	mp.chatBtn.addActionListener(this);
     	mp.homeBtn.addActionListener(this); // 쇼핑몰
     	mp.findBtn.addActionListener(this);
+      	mp.boardBtn.addActionListener(this);
     	
     	cp.chatP.tf.addActionListener(this);
     	
@@ -97,7 +98,10 @@ public class ClientMain extends JFrame implements ActionListener,MouseListener,R
 		{
 			dispose();// window메모리 해제 
 			System.exit(0);// 프로그램 종료
+		}else if(e.getSource() == mp.boardBtn) {
+			cp.card.show(cp, "LIST"); // <a href="list.jsp">
 		}
+		
 		else if(e.getSource() == mp.findBtn) {
 			cp.card.show(cp, "FP");
 		}

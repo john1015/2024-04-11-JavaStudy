@@ -12,9 +12,9 @@ public class GoodsDetailPanel extends JPanel implements ActionListener,ItemListe
   JButton b1,b2;
   JComboBox<Integer> box;
   JLabel pLa,tLa;
-  ControllPanel cp;// 화면 이동
+  ControlPanel cp;// 화면 이동
   GoodsDAO dao;
-  public GoodsDetailPanel(ControllPanel cp)
+  public GoodsDetailPanel(ControlPanel cp)
   {
 	  dao=GoodsDAO.newInstance();
 	  this.cp=cp;

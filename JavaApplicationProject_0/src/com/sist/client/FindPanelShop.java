@@ -9,18 +9,18 @@ import java.awt.*;
 import java.awt.event.*;
 import java.net.URL;
 
-public class FindPanel extends JPanel implements ActionListener , MouseListener{
+public class FindPanelShop extends JPanel implements ActionListener , MouseListener{
 	JTable table;
 	DefaultTableModel model;
 	JTextField tf;
 	JButton b;
-	EmpMemberDAO dao;
-	ControlPanelEmp cp;
+	GoodsDAO dao;
+	ControlPanel cp2;
 	TableColumn column;
 	
-	public FindPanel(ControlPanelEmp cp) {
-		dao = EmpMemberDAO.newInstance();
-		this.cp = cp;
+	public FindPanelShop(ControlPanel cp2) {
+		dao = GoodsDAO.newInstance();
+		this.cp2 = cp2;
 		
 		setLayout(new BorderLayout()); // 위아래 배치(North,South) // 똑같은거여러개 => Grid // 내가 지정하기 null
 		tf = new JTextField(20);
@@ -31,8 +31,8 @@ public class FindPanel extends JPanel implements ActionListener , MouseListener{
 		p.add(b);
 		add("North",p);
 		
-		String[] col = {"사번", "이름", "직위", "연봉", "입사일", "부서명", "근무지", "실적"};
-		Object[][] row = new Object[0][8];
+		String[] col = {"번호" , "" , "상품명" , "가격"};
+		Object[][] row = new Object[0][4];
 		
 		model = new DefaultTableModel(row,col) {
 			@Override
@@ -41,6 +41,12 @@ public class FindPanel extends JPanel implements ActionListener , MouseListener{
 				return false;
 			}
 
+			@Override
+			public Class<?> getColumnClass(int columnIndex) {
+				// TODO Auto-generated method stub
+				return getValueAt(0, columnIndex).getClass();
+			}
+			
 			
 		};
 		
@@ -67,7 +73,7 @@ public class FindPanel extends JPanel implements ActionListener , MouseListener{
 		b.addActionListener(this);
 		table.addMouseListener(this);
 		
-		setSize(1280,720);
+		setSize(960,700);
 		setVisible(true);
 	}
 
@@ -83,7 +89,7 @@ public class FindPanel extends JPanel implements ActionListener , MouseListener{
 			}
 			
 			// 데이터베이스 연동
-			ArrayList<EmpVO> list = dao.empFindData(name);
+			ArrayList<GoodsVO> list = dao.goodsFindData(name);
 			if(list.size() < 1) {
 				JOptionPane.showMessageDialog(this, "검색된 결과가 없습니다");
 			}
@@ -93,17 +99,15 @@ public class FindPanel extends JPanel implements ActionListener , MouseListener{
 					model.removeRow(i);
 				}
 				System.out.println(list.size());
-				for (EmpVO vo : list) {
+				for (GoodsVO vo : list) {
 					try {
+						URL url = new URL(vo.getGoods_poster());
+						Image img = ImageChange.getImage(new ImageIcon(url), 35, 35);
 						Object[] obj = {
-							vo.getEmpno(),
-							vo.getEname() ,
-							vo.getJob(),
-							vo.getSal(),
-							vo.getHiredate(),
-							vo.getDvo().getDname(),
-							vo.getDvo().getLoc(),
-							vo.getPerformance()
+							vo.getNo(),
+							new ImageIcon(img) ,
+							vo.getGoods_name(),
+							vo.getGoods_price()
 						};
 						model.addRow(obj);
 					} catch (Exception ex) {}
@@ -119,7 +123,8 @@ public class FindPanel extends JPanel implements ActionListener , MouseListener{
 			if(e.getClickCount() == 2) {
 				int row = table.getSelectedRow();
 				String no = model.getValueAt(row, 0).toString();
-				cp.card.show(cp, "EP");
+				cp2.dp.print(Integer.parseInt(no));
+				cp2.card.show(cp2, "DP");
 			}
 		}
 	}

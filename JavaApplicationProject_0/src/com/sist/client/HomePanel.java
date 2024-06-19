@@ -21,10 +21,10 @@ public class HomePanel extends JPanel implements ActionListener,MouseListener{
     // 데이터베이스 연결
     GoodsDAO dao;
     // 초기화 
-    ControllPanel cp;
-    public HomePanel(ControllPanel cp)
+    ControlPanel cp2;
+    public HomePanel(ControlPanel cp2)
     {
-    	this.cp=cp;
+    	this.cp2=cp2;
     	dao=GoodsDAO.newInstance();
     	pan.setLayout(new GridLayout(3,4,5,5));
     	
@@ -102,8 +102,8 @@ public class HomePanel extends JPanel implements ActionListener,MouseListener{
 				{
 					String no=imgs[i].getToolTipText();
 					no=no.substring(no.lastIndexOf("^")+1);
-					cp.dp.print(Integer.parseInt(no));
-					cp.card.show(cp, "DP");
+					cp2.dp.print(Integer.parseInt(no));
+					cp2.card.show(cp2, "DP");
 				}
 			}
 		}
