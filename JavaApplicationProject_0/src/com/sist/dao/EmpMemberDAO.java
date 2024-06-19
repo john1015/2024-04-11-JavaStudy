@@ -83,6 +83,39 @@ public class EmpMemberDAO {
 		   }
 		   return list;
 	   }
+	   public ArrayList<EmpVO> empRankData()
+	   {
+		   ArrayList<EmpVO> list2=new ArrayList<EmpVO>();
+		   try
+		   {
+			   getConnection();
+			   String sql2="SELECT empno,ename,dname,performance,num "
+			   		+ "	   FROM (SELECT empno,ename,dname,performance,rownum as num "
+			   		+ "			 from (SELECT empno,ename,dname,performance "
+			   		+ "			   	   FROM emp,dept where dept.deptno = emp.deptno "
+			   		+ "                ORDER BY performance DESC))" ;
+			   ps=conn.prepareStatement(sql2);
+			   ResultSet rs2=ps.executeQuery();
+			   while(rs2.next())
+			   {
+				   EmpVO vo2=new EmpVO();
+				   vo2.setEmpno(rs2.getInt(1));
+				   vo2.setEname(rs2.getString(2));
+				   vo2.getDvo().setDname(rs2.getString(3));
+				   vo2.setPerformance(rs2.getInt(4));
+				   
+				   list2.add(vo2);
+			   }
+		   }catch(Exception ex)
+		   {
+			   ex.printStackTrace();
+		   }
+		   finally
+		   {
+			   disConnection();
+		   }
+		   return list2;
+	   }
 	   
 	   public int empTotalPage()
 	     {
