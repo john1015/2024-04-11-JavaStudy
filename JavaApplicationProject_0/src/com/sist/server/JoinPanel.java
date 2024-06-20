@@ -1,8 +1,12 @@
+package com.sist.server;
+
+
+
 import java.util.*;
 import javax.swing.*;
 import java.awt.*;
 public class JoinPanel extends JFrame{
-    JLabel tLa,iLa,pLa1,nLa,sLa,bLa,pLa,aLa1,aLa2,telLa,cLa,eLa,empLa;
+    JLabel tLa,iLa,pLa1,nLa,sLa,bLa,pLa,aLa1,aLa2,telLa,cLa,eLa,empLa,nnlabel,redLa;
     JTextField idtf,nametf,birthtf,posttf,addrtf1,addrtf2,teltf,emailtf,emptf;
     JTextArea cta;
     JButton b1,b2,b3,b4;
@@ -18,7 +22,13 @@ public class JoinPanel extends JFrame{
     	tLa.setBounds(10, 45, 1260, 40);
     	add(tLa);
     	
-    	iLa=new JLabel("*아이디",JLabel.RIGHT);
+    	redLa = new JLabel("*");
+    	redLa.setOpaque(true);
+    	redLa.setForeground(new Color(255, 0, 0));
+    	redLa.setBounds(397, 110, 5, 30);
+    	add(redLa);
+    	
+    	iLa=new JLabel("아이디",JLabel.RIGHT);
     	iLa.setBounds(350, 110, 90, 30);
     	add(iLa);
     	
@@ -32,7 +42,14 @@ public class JoinPanel extends JFrame{
     	b1.setBounds(670, 110, 150, 30);
     	add(b1);
     	/////////////////////////////////////////////////////////////// id
-    	pLa1=new JLabel("*비밀번호",JLabel.RIGHT);
+    	
+    	redLa = new JLabel("*");
+    	redLa.setOpaque(true);
+    	redLa.setForeground(new Color(255, 0, 0));
+    	redLa.setBounds(385, 160, 5, 30);
+    	add(redLa);
+    	
+    	pLa1=new JLabel("비밀번호",JLabel.RIGHT);
     	pLa1.setBounds(350, 160, 90, 30);
     	add(pLa1);
     	
@@ -40,7 +57,13 @@ public class JoinPanel extends JFrame{
     	pf.setBounds(465, 160, 200, 30);
     	add(pf);
     	///////////////////////////////////////////////////////////////
-    	nLa=new JLabel("*이름",JLabel.RIGHT);
+    	redLa = new JLabel("*");
+    	redLa.setOpaque(true);
+    	redLa.setForeground(new Color(255, 0, 0));
+    	redLa.setBounds(410, 200, 5, 30);
+    	add(redLa);
+    	
+    	nLa=new JLabel("이름",JLabel.RIGHT);
     	nLa.setBounds(350, 200, 90, 30);
     	add(nLa);
     	
@@ -48,7 +71,13 @@ public class JoinPanel extends JFrame{
     	nametf.setBounds(465, 200, 200, 30);
     	add(nametf);
     	////////////////////////////////////////////////////////////////
-    	sLa=new JLabel("*성별",JLabel.RIGHT);
+    	redLa = new JLabel("*");
+    	redLa.setOpaque(true);
+    	redLa.setForeground(new Color(255, 0, 0));
+    	redLa.setBounds(410, 240, 5, 30);
+    	add(redLa);
+    	
+    	sLa=new JLabel("성별",JLabel.RIGHT);
     	sLa.setBounds(350, 240, 90, 30);
     	add(sLa);
     	
@@ -66,7 +95,8 @@ public class JoinPanel extends JFrame{
     	
     	rb1.setSelected(true);
     	/////////////////////////////////////////////////////////////
-    	telLa=new JLabel("*전화",JLabel.RIGHT);
+    	
+    	telLa=new JLabel("전화",JLabel.RIGHT);
     	telLa.setBounds(350, 280, 90, 30);
     	add(telLa);
     	
@@ -79,7 +109,13 @@ public class JoinPanel extends JFrame{
     	teltf.setBounds(570, 280, 200, 30);
     	add(teltf);
     	///////////////////////////////////////////////////////////
-    	pLa=new JLabel("*우편번호",JLabel.RIGHT);
+    	redLa = new JLabel("*");
+    	redLa.setOpaque(true);
+    	redLa.setForeground(new Color(255, 0, 0));
+    	redLa.setBounds(385, 320, 5, 30);
+    	add(redLa);
+    	
+    	pLa=new JLabel("우편번호",JLabel.RIGHT);
     	pLa.setBounds(350, 320, 90, 30);
     	add(pLa);
     	
@@ -95,7 +131,13 @@ public class JoinPanel extends JFrame{
     	b2.setBounds(670, 320, 150, 30);
     	add(b2);
     	////////////////////////////////////////////////////////////
-    	aLa1=new JLabel("*주소",JLabel.RIGHT);
+    	redLa = new JLabel("*");
+    	redLa.setOpaque(true);
+    	redLa.setForeground(new Color(255, 0, 0));
+    	redLa.setBounds(410, 360, 5, 30);
+    	add(redLa);
+    	
+    	aLa1=new JLabel("주소",JLabel.RIGHT);
     	aLa1.setBounds(350, 360, 90, 30);
     	add(aLa1);
     	
@@ -111,6 +153,12 @@ public class JoinPanel extends JFrame{
     	addrtf2.setBounds(465, 400, 450, 30);
     	add(addrtf2);
     	///////////////////////////////////////////////////////////
+    	redLa = new JLabel("*");
+    	redLa.setOpaque(true);
+    	redLa.setForeground(new Color(255, 0, 0));
+    	redLa.setBounds(397, 440, 5, 30);
+    	add(redLa);
+    	
     	eLa=new JLabel("이메일",JLabel.RIGHT);
     	eLa.setBounds(350, 440, 90, 30);
     	add(eLa);
@@ -119,7 +167,13 @@ public class JoinPanel extends JFrame{
     	emailtf.setBounds(465, 440, 450, 30);
     	add(emailtf);
     	////////////////////////////////////////////////////////////
-    	bLa=new JLabel("*생년월일",JLabel.RIGHT);
+    	redLa = new JLabel("*");
+    	redLa.setOpaque(true);
+    	redLa.setForeground(new Color(255, 0, 0));
+    	redLa.setBounds(385, 480, 5, 30);
+    	add(redLa);
+    	
+    	bLa=new JLabel("생년월일",JLabel.RIGHT);
     	bLa.setBounds(350, 480, 90, 30);
     	add(bLa);
     	
@@ -136,6 +190,14 @@ public class JoinPanel extends JFrame{
     	add(emptf);
     	
     	
+
+    	
+    	nnlabel = new JLabel("*는 필수 입력란입니다");
+    	nnlabel.setOpaque(true);
+    	nnlabel.setForeground(new Color(255, 0, 0));
+    	nnlabel.setFont(new Font("궁서",Font.BOLD,10));
+    	nnlabel.setBounds(1000, 50, 200, 30);
+    	add(nnlabel);
     	
     	b3=new JButton("회원가입");
     	b4=new JButton("취소");
