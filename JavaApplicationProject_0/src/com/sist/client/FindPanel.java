@@ -70,20 +70,30 @@ public class FindPanel extends JPanel implements ActionListener , MouseListener{
 		setSize(1280,720);
 		setVisible(true);
 	}
-
+	
+	public void print()	{
+		
+		//List<EmpVO> = dao.empDetailData(ABORT);
+	}
+	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		if(e.getSource() == b || e.getSource()== tf) {
-			String name = tf.getText();
-			if(name.length() < 1) {
+			String ename = tf.getText();
+			
+			//int row=table.getSelectedRow();
+			//String eno=model.getValueAt(row, 0).toString();
+			//int no = Integer.parseInt(eno);
+			
+			if(ename.length() < 1) {
 				JOptionPane.showMessageDialog(this, "검색어를 입력하시오");
 				tf.requestFocus();
 				return;
 			}
 			
 			// 데이터베이스 연동
-			ArrayList<EmpVO> list = dao.empFindData(name);
+			ArrayList<EmpVO> list = dao.empFindData(ename);
 			if(list.size() < 1) {
 				JOptionPane.showMessageDialog(this, "검색된 결과가 없습니다");
 			}
@@ -119,7 +129,8 @@ public class FindPanel extends JPanel implements ActionListener , MouseListener{
 			if(e.getClickCount() == 2) {
 				int row = table.getSelectedRow();
 				String no = model.getValueAt(row, 0).toString();
-				cp.card.show(cp, "EP");
+				cp.edp.print(no);
+				cp.card.show(cp, "EDETAIL");
 			}
 		}
 	}

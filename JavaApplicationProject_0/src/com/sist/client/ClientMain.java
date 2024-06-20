@@ -407,7 +407,7 @@ public class ClientMain extends JFrame implements ActionListener,MouseListener,R
 			
 			post.setVisible(false);
 			}
-		}
+		} //else if (e.getSource() == cp.edp.)
 	}
 	@Override
 	public void mousePressed(MouseEvent e) {
@@ -458,6 +458,7 @@ public class ClientMain extends JFrame implements ActionListener,MouseListener,R
 					  }
 					  
 				  }
+				  
 				  break;
 				  case Function.MYLOG:
 				  {

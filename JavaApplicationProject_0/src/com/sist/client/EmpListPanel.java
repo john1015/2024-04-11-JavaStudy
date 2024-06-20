@@ -4,6 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.ArrayList;
 import javax.swing.table.*;
 import com.sist.dao.*;
@@ -11,7 +13,7 @@ import java.text.*;
 import java.util.Date;
 
 // 사번의 정보를 출력 => 조인 
-public class EmpListPanel extends JPanel implements ActionListener {
+public class EmpListPanel extends JPanel implements ActionListener,MouseListener {
 	JLabel titleLa,titleLa2;
 	JTable table, table2;
 	DefaultTableModel model, model2;
@@ -89,10 +91,40 @@ public class EmpListPanel extends JPanel implements ActionListener {
 			}
 		}
 	}
-
+	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 
+	}
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
 	}
 }

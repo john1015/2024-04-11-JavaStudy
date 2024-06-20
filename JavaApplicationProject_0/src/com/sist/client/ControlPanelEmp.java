@@ -14,6 +14,8 @@ public class ControlPanelEmp extends JPanel {
 	BoardDetailPanel bdp;
 	BoardDeletePanel bdelp;
 	BoardUpdatePanel bup;
+	EmpDetailPanel edp;
+	EmpUpdatePanel eup;
 	ChatPanel chatP = new ChatPanel();
 
 	public ControlPanelEmp() {
@@ -25,6 +27,8 @@ public class ControlPanelEmp extends JPanel {
 		bdp = new BoardDetailPanel(this);
 		bdelp = new BoardDeletePanel(this);
 		bup = new BoardUpdatePanel(this);
+		edp = new EmpDetailPanel(this);
+		eup = new EmpUpdatePanel(this);
 
 		add("EP", ep);
 		add("CHAT", chatP);
@@ -34,6 +38,8 @@ public class ControlPanelEmp extends JPanel {
 		add("DETAIL", bdp);
 		add("DELETE", bdelp);
 		add("UPDATE", bup);
+		add("EDETAIL", edp);
+		add("EUPDATE", eup);
 
 	}
 }
