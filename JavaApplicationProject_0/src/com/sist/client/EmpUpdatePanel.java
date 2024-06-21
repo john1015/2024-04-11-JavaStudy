@@ -8,7 +8,7 @@ import java.awt.event.*;
 public class EmpUpdatePanel extends JPanel implements ActionListener {
     JLabel enola, enamela, jobla, salla, hiredatela, performancela, dnamela, locla, dnola;
     JLabel enola2, enamela2, hiredatela2, performancela2, dnamela2, locla2, dnola2;
-    JTextField saltf, jobtf,enotf;
+    JTextField saltf, jobtf;
     JButton list, update;
     JLabel tLa;
     ControlPanelEmp cp; // 화면 이동
@@ -28,8 +28,8 @@ public class EmpUpdatePanel extends JPanel implements ActionListener {
         add(enola);
 
         enola2 = new JLabel();
-        enotf.setBounds(465, 110, 200, 30);
-        add(enotf);
+        enola2.setBounds(465, 110, 200, 30);
+        add(enola2);
 
         enamela = new JLabel("이름", JLabel.RIGHT);
         enamela.setBounds(350, 160, 90, 30);
@@ -109,10 +109,22 @@ public class EmpUpdatePanel extends JPanel implements ActionListener {
         update.addActionListener(this);
     }
 
+    public void print(String no) {
+		EmpVO vo = dao.empDetailData(no);
+		this.enola2.setText(String.valueOf(vo.getEmpno()));
+		enamela2.setText(vo.getEname());
+		jobtf.setText(vo.getJob());
+		saltf.setText(String.valueOf(vo.getSal()));
+		hiredatela2.setText(vo.getHiredate().toString());
+		performancela2.setText(String.valueOf(vo.getPerformance()));
+		dnamela2.setText(vo.getDvo().getDname());
+		locla2.setText(vo.getDvo().getLoc());
+		dnola2.setText(String.valueOf(vo.getDvo().getDeptno()));
+	}
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == list) {
-            cp.card.show(cp, "EP");
+            cp.card.show(cp, "EDETAIL");
         } else if (e.getSource() == update) {
             try {
                 String job = jobtf.getText().trim();
@@ -154,8 +166,9 @@ public class EmpUpdatePanel extends JPanel implements ActionListener {
 
                 if (bCheck) {
                     JOptionPane.showMessageDialog(this, "수정이 완료되었습니다");
-                    cp.bdp.print(vo.getEmpno());
-                    cp.card.show(cp, "EDETAIL");
+                    cp.eup.print(String.valueOf(vo.getEmpno()));
+                    cp.edp.print(String.valueOf(vo.getEmpno()));
+                    cp.fp.print();
                 } else {
                     JOptionPane.showMessageDialog(this, "수정에 실패했습니다. 다시 시도해주세요.");
                 }

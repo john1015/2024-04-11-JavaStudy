@@ -73,7 +73,7 @@ public class FindPanel extends JPanel implements ActionListener , MouseListener{
 	
 	public void print()	{
 		
-		//List<EmpVO> = dao.empDetailData(ABORT);
+		b.doClick();
 	}
 	
 	@Override
